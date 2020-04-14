@@ -83,7 +83,7 @@ if [ -n "$rules_iptables" ]; then
         if [ -n "$ipset_mb" ]; then
             ipset_name=$(echo "$ipset_mb" | awk '{print $2}')
             ipset_way=$(echo "$ipset_mb" | awk '{print $3}')
-            ipset_ips=$(cat $ipset | grep -w "$ipset_name" | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$')
+            ipset_ips=$(cat $ipset | grep -w "$ipset_name" | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+')
         
             while IFS= read -r ipset_rule
             do
